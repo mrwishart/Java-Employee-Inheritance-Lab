@@ -39,4 +39,22 @@ public class DeveloperTest {
     public void canGetPayBonus(){
         assertEquals(2.51, developer.payBonus(), 0.01);
     }
+
+    @Test
+    public void canNotAddNegativeRaise(){
+        developer.raiseSalary(-1);
+        assertEquals(250.5, developer.getSalary(), 0.01);
+    }
+
+    @Test
+    public void canChangeName(){
+        developer.setName("Dwight Kurt Schrute");
+        assertEquals("Dwight Kurt Schrute", developer.getName());
+    }
+
+    @Test
+    public void canNotChangeNameIfNull(){
+        developer.setName(null);
+        assertEquals("Oggy", developer.getName());
+    }
 }
